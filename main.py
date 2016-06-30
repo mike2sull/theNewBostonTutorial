@@ -1,8 +1,6 @@
-name = "Bucky"
+foods = ['bacon','tuna','ham','snausages','beef']
 
-if name is "Bucky":
-    print("Hey there Bucky!")
-elif name is "Lucy":
-    print("Why hello there Ms. Lucy")
-else:
-    print("GTFO")
+#f is a placeholder for each of the foods in the foods list
+for f in foods[:4]:
+    print(f)
+    print(len(f))
