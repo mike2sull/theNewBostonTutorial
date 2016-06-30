@@ -1,6 +1,5 @@
-foods = ['bacon','tuna','ham','snausages','beef']
+buttcrack = 5
 
-#f is a placeholder for each of the foods in the foods list
-for f in foods[:4]:
-    print(f)
-    print(len(f))
+while buttcrack <= 10:
+    print(buttcrack)
+    buttcrack += 1
