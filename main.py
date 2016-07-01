@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+hrefSet = set()
+
 def forum_spider(max_pages):
     page = 1
     while page < max_pages:
@@ -28,9 +30,8 @@ def get_single_item_data(item_url):
         # print(formattedUsername)
     for link in soup.findAll('a'):
         href = link.get('href')
-        hrefSet = set()
         hrefSet.add(href)
-        print(hrefSet)
+    print(hrefSet)
 
 
 forum_spider(2)
