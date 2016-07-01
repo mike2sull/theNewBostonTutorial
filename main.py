@@ -16,7 +16,7 @@ def forum_spider(max_pages):
             formattedTitle = title.strip()
             # print(href)
             print('\nTitle: ', formattedTitle, '\n')
-            print('Usernames:\n'),
+            print('Posters:\n'),
             get_single_item_data(href)
         page += 1
         print("\npage:", page - 1)
@@ -24,10 +24,10 @@ def forum_spider(max_pages):
 def get_single_item_data(item_url):
     source_code = requests.get(item_url).text
     soup = BeautifulSoup(source_code, 'html.parser')
-    # for posters in soup.findAll('a', {'class': 'user-name'}):
-        # username = posters.string
-        # formattedUsername = username.strip()
-        # print(formattedUsername)
+    for posters in soup.findAll('a', {'class': 'user-name'}):
+        username = posters.string
+        formattedUsername = username.strip()
+        print(formattedUsername)
     for link in soup.findAll('a'):
         href = link.get('href')
         hrefSet.add(href)
